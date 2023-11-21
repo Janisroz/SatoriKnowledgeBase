@@ -6,6 +6,13 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+class Keyword(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -15,7 +22,7 @@ class Post(models.Model):
     upload_date = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
-    keywords = models.ManyToManyField(User, related_name='keyword', blank=True)
+    keywords = models.ManyToManyField(Keyword)
 
     class Meta:
         ordering = ['-upload_date']
@@ -43,8 +50,4 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.name}"
 
 
-class Keyword(models.Model):
-    keyword = models.CharField(max_length=100, unique=True)
 
-    def __str__(self):
-        return self.keyword
