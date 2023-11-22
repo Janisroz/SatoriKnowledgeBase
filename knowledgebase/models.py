@@ -18,7 +18,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     vid_url = models.URLField(max_length=200)
     description = models.CharField(max_length=300)
-    thumbnail = models.URLField(max_length=200)
+    thumbnail = models.URLField(max_length=500)
     upload_date = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
@@ -48,6 +48,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-
-
