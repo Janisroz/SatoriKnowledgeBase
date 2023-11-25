@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .models impor Post 
+from .models import Post
 
 class VideoList(generic.ListView):
     model = Post

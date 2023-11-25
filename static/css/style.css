@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #0e0f0f;
+}
+
+.navbar-dark .navbar-brand {
+    color: #f2f2f2;
+    font-family: "Exo", sans-serif;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .nav-link,
+.navbar-toggler-icon {
+    color: #f2f2f2;
+}
+
+
+.footer {
+    background-color: #0e0f0f;
+    position: sticky;
+    bottom: 0;
+    padding-bottom: 0 !important;
+    max-height: 10vh;
+}
+
+.footer-margins {
+    margin-bottom: 0.25em;
+}
+
+.social-links {
+    font-size: large;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.491);
+}
+
+.social-link:hover {
+    color: white;
+}
+
+.social-links a:hover {
+    color: rgba(255, 255, 255, 0.491);
+}
+
+a i {
+    width: auto;
+}
