@@ -1,7 +1,43 @@
 {% extends "base.html" %} {% block content %}
-
-<div>
-  <p>text</p>
+<!-- Search bar (NEED TO WIRE UP) -->
+<div class="container mt-3">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="input-group rounded">
+        <input
+          type="search"
+          class="form-control rounded"
+          placeholder="Search"
+          aria-label="Search"
+          aria-describedby="search-addon"
+        />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+    </div>
+  </div>
 </div>
-
-{% endblock %}
+<!-- Blog Entries Column -->
+<div class="col-12 mt-3 left">
+  <div class="row">
+    {% for post in post_list %} 
+    <div class="col-md-4">
+        <div class="card mb-4 h-100">
+            <div class="card-body">
+                <div class="image-container">
+                    <img class="card-img-top" src="{{ post.thumbnail }}">
+                </div>
+                <a href="#" class="post-link">
+                    <h4 class="card-title">{{ post.title }}</h2>
+                </a>
+                <hr />
+                <p class="card-text text-muted h6"><i class="far fa-heart"></i>
+                    {{ post.number_of_likes }}</p>
+            </div>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:3 %}
+  </div>
+  <div class="row">{% endif %} {% endfor %} {% endblock %}</div>
+</div>
