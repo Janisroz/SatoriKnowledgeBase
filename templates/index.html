@@ -1,20 +1,9 @@
 {% extends "base.html" %} {% block content %}
 <!-- Search bar -->
-<form action="GET" action="{% url 'index' %}">
-    {{ form.as_p }}
-    <input type="submit" value="Submit" class="btn btn-primary">
+<form method="GET" action="{% url 'index' %}" class="mt-3">
+    {{ form }}
+    <input type="submit" class="btn btn-primary">
 </form>
-<!-- Keyword Dropdown -->
-<div class="dropdown">
-    <button class="btn btn-dropdown dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-        Keywords
-    </button>
-    <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-    </div>
-</div>
 
 <!-- Blog Entries Column -->
 <div class="col-12 mt-3 left">
