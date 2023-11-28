@@ -4,10 +4,5 @@ import django_filters
 
 
 class VideoTitleForm(forms.Form):
-    class Meta:
-        model = Post
-        fields = ('title')
-
-
-class KeywordFilter(django_filters.FilterSet):
+    title = forms.CharField() 
     

@@ -1,23 +1,9 @@
 {% extends "base.html" %} {% block content %}
-<!-- Search bar (NEED TO WIRE UP) -->
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-4 d-flex justify-content-left">
-      <div class="input-group rounded">
-        <input
-          type="search"
-          class="form-control rounded"
-          placeholder="Search"
-          aria-label="Search"
-          aria-describedby="search-addon"
-        />
-        <span class="input-group-text border-0" id="search-addon">
-          <i class="fas fa-search"></i>
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Search bar -->
+<form action="GET" action="{% url 'index' %}">
+    {{ form.as_p }}
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>
 <!-- Keyword Dropdown -->
 <div class="dropdown">
     <button class="btn btn-dropdown dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">

@@ -30,7 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-janisroz-satoriknowledge-pi79cwesmn.us2.codeanyapp.com',
-                 'satori-knowledgebase-f34b4f67eb41.herokuapp.com']
+                 'satori-knowledgebase-f34b4f67eb41.herokuapp.com',
+                 '8001-janisroz-satoriknowledge-pi79cwesmn.us2.codeanyapp.com']
 
 
 # Application definition
