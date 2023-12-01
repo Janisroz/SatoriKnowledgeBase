@@ -9,7 +9,7 @@ class VideoList(ListView):
     queryset = Post.objects.filter(status=1).order_by('-upload_date')
     template_name = 'index.html'
     context_object_name = 'post_list'
-    paginate_by = 8
+    paginate_by = 9
 
     def get_queryset(self):
         queryset = super().get_queryset()
