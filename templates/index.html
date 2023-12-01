@@ -9,4 +9,24 @@
   <input type="submit" class="btn btn-primary mb-3" />
   <a href="{% url 'index' %}" class="btn btn-primary mb-3">Reset Filters</a>
 </form>
-{% endblock %}
+<!-- Blog Entries Column -->
+<div class="container-fluid w-75">
+  <div class="row">
+    {% for post in post_list %} 
+    <div class="col-lg-4 col-12 col-sm-6 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="image-container">
+                    <img class="card-img-top" src="{{ post.thumbnail }}">
+                </div>
+                <a href="#" class="post-link">
+                    <h4 class="card-title">{{ post.title }}</h2>
+                </a>
+                <hr />
+                <p class="card-text text-muted h6"><i class="far fa-heart"></i>
+                    {{ post.number_of_likes }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %} {% endblock %}</div>
+</div>
