@@ -27,9 +27,54 @@ body {
     color: #f2f2f2;
 }
 
+/* form  */
+label {
+    font-family: "Exo",
+        sans-serif;
+    font-weight: 700;
+}
+
+option {
+    font-family: "Kanit", sans-serif;
+}
+
+.form-control:focus {
+    border-color: darkgray;
+    box-shadow: 0 0 0 0.2rem darkgray;
+}
+
+
+/* filter buttons */
+.form-btn {
+    border-color: black;
+    font-family: "Exo",
+        sans-serif;
+    font-weight: 700;
+
+}
+
+.form-btn:hover {
+    border-color: darkgray;
+    color: darkgray;
+}
+
 /* Post Cards */
 .card-title {
     color: black;
+    font-family: "Kanit", sans-serif;
+    font-size: larger;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-top {
@@ -42,6 +87,19 @@ body {
     max-width: 100%;
 }
 
+/* Pagination Controls */
+.page-link {
+    color: black;
+    font-family: "Exo",
+        sans-serif;
+    font-weight: 700;
+
+}
+
+.page-link:hover {
+    color: darkgray !important;
+    background-color: initial;
+}
 
 /* Footer */
 .footer {
