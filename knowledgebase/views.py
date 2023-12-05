@@ -20,3 +20,23 @@ class VideoList(ListView):
         context = super().get_context_data(**kwargs)
         context['form'] = self.filterset.form
         return context
+
+
+class video_post(View):
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True)
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        return render(
+            request,
+            "video_post.html",
+            {
+                "post": post,
+                "comments": comments,
+                "liked": liked
+            }
+        )

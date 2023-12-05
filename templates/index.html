@@ -19,7 +19,7 @@
                     <div class="image-container">
                         <img class="card-img-top" src="{{ post.thumbnail }}">
                     </div>
-                    <a href="#" class="post-link">
+                    <a href="{% url 'video_post' post.slug %}" class="post-link">
                         <h4 class="card-title mt-1">{{ post.title }}</h2>
                     </a>
                     <hr />
