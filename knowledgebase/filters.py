@@ -19,7 +19,7 @@ class PostFilter(django_filters.FilterSet):
 
     keywords = django_filters.ModelMultipleChoiceFilter(
         queryset=Keyword.objects.all(),
-        label='Keywords:',
+        label='Filters:',
         widget=forms.SelectMultiple(
             attrs={
                 'class': 'form-select form-select-sm'}

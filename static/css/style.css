@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: "Kanit", sans-serif;
 }
 
 /* Nav Bar */
@@ -78,6 +79,10 @@ option {
 }
 
 .card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
     color: black;
     font-family: "Kanit", sans-serif;
     font-size: larger;
@@ -171,4 +176,13 @@ a {
 
 a i {
     width: auto;
+}
+
+/* Video Post Pages */
+.card-text+p {
+    font-size: x-large;
+}
+
+.fa-comments {
+    color: black;
 }
