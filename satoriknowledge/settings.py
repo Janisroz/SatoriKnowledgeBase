@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-janisroz-satoriknowledge-pi79cwesmn.us2.codeanyapp.com',
+ALLOWED_HOSTS = ['8000-janisroz-satoriknowledge-slot6r9v15.us2.codeanyapp.com',
                  'satori-knowledgebase-f34b4f67eb41.herokuapp.com',
                  '8001-janisroz-satoriknowledge-pi79cwesmn.us2.codeanyapp.com']
 

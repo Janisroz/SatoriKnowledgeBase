@@ -162,7 +162,7 @@ a:hover {
     font-size: large;
 }
 
-a {
+.footer-link {
     color: rgba(255, 255, 255, 0.491);
 }
 
@@ -184,5 +184,15 @@ a i {
 }
 
 .fa-comments {
+    color: black;
+}
+
+/* Login Page */
+.sign-up-link {
+    background-color: white;
+    color: black;
+}
+
+.helptext a {
     color: black;
 }
