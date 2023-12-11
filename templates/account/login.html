@@ -29,6 +29,7 @@
             {% slot actions %}
                 {% element button type="submit" tags="prominent,login" class="btn form-btn" %}
                     {% trans "Sign In" %}
+                    {% csrf_token %}
                 {% endelement %}
             {% endslot %}
         {% endelement %}

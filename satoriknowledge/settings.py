@@ -34,7 +34,8 @@ ALLOWED_HOSTS = ['8000-janisroz-satoriknowledge-slot6r9v15.us2.codeanyapp.com',
                  '8001-janisroz-satoriknowledge-pi79cwesmn.us2.codeanyapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-janisroz-satoriknowledge-pi79cwesmn.us2.codeanyapp.com']
+    'https://8000-janisroz-satoriknowledge-pi79cwesmn.us2.codeanyapp.com',
+    'https://8000-janisroz-satoriknowledge-slot6r9v15.us2.codeanyapp.com']
 
 # Application definition
 

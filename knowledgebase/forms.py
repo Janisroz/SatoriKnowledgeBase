@@ -1,8 +1,8 @@
-from .models import Keyword, Post
+from .models import Comment
 from django import forms
-import django_filters
 
 
-class VideoTitleForm(forms.Form):
-    title = forms.CharField() 
-    
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('body',)
