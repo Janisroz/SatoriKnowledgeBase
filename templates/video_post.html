@@ -59,7 +59,7 @@
               {% else %}
               <span><i class="far fa-heart mr-1"></i></span>
               {% endif %}
-              <span class="mr-2">{{ post.total_likes }}</span>
+              <span class="mr-4">{{ post.total_likes }}</span>
             </strong>
           </div>
           <div>
@@ -105,10 +105,10 @@
         {% else %} {% if user.is_authenticated %}
 
         <h3>Leave a comment:</h3>
-        <p>Posting as: {{ user.username }}</p>
+        <p class="post-as">Posting as: {{ user.username }}</p>
         <form method="post" style="margin-top: 1.3em">
           {{ comment_form | crispy }} {% csrf_token %}
-          <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+          <button type="submit" class="btn form-btn mb-3">Submit</button>
         </form>
         {% endif %} {% endif %}
       </div>

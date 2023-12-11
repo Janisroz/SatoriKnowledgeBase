@@ -130,6 +130,16 @@ a:hover {
     color: black;
 }
 
+.btn-like {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.post-as {
+    font-size: larger;
+}
+
 
 /* Pagination Controls */
 .page-link {
