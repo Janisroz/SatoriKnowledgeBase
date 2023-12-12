@@ -4,7 +4,9 @@ from .models import Technique, Keyword
 from .filters import PostFilter
 from django.views.generic.list import ListView
 from django.http import HttpResponseRedirect
-from .forms import CommentForm
+from .forms import CommentForm, TechniqueForm
+from django.views.generic import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class VideoList(ListView):
@@ -85,3 +87,14 @@ class LikedPost(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('video_post', args=[slug]))
+
+class createTechnique(LoginRequiredMixin, CreateView):
+    """Create Technique View"""
+    template_name = 'add_technique.html'
+    model = Technique
+    form_class = TechniqueForm
+    success_url = ''
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(createTechnique, self).form_valid(form)
