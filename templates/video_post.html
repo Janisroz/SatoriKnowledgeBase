@@ -70,7 +70,7 @@
             </strong>
             {% endwith %}
             {% if user.is_superuser %}
-            <a href="" class="btn form-btn mb-3">Edit Technique</a>
+            <a href="{% url 'edit_technique' post.slug %}" class="btn form-btn mb-3">Edit Technique</a>
             <a href="{% url 'delete_technique' post.slug %}" class="btn form-btn mb-3">Delete Technique</a>
             {% endif %}
           </div>

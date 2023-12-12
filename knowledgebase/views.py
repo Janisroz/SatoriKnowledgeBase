@@ -5,7 +5,7 @@ from .filters import PostFilter
 from django.views.generic.list import ListView
 from django.http import HttpResponseRedirect
 from .forms import CommentForm, TechniqueForm
-from django.views.generic import CreateView, DeleteView
+from django.views.generic import CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
@@ -88,7 +88,7 @@ class LikedPost(View):
 
         return HttpResponseRedirect(reverse('video_post', args=[slug]))
 
-class createTechnique(LoginRequiredMixin, CreateView):
+class CreateTechnique(LoginRequiredMixin, CreateView):
     """Create Technique View"""
     template_name = 'add_technique.html'
     model = Technique
@@ -98,6 +98,15 @@ class createTechnique(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(createTechnique, self).form_valid(form)
+
+class EditTechnique(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """Edit a Technique"""
+    template_name='knowledgebase/edit_technique.html'
+    form_class = TechniqueForm
+    model = Technique
+    success_url = ''
+    def test_func(self):
+        return self.request.user.is_superuser
 
 class DeleteTechnique(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Delete a Technique """
