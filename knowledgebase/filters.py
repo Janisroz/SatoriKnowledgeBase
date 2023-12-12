@@ -20,7 +20,7 @@ class PostFilter(django_filters.FilterSet):
     keywords = django_filters.ModelMultipleChoiceFilter(
         queryset=Keyword.objects.all(),
         label='Filters:',
-        widget=forms.SelectMultiple(
+        widget=forms.CheckboxSelectMultiple(
             attrs={
                 'class': 'form-select form-select-sm'}
         )

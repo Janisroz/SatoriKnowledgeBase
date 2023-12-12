@@ -58,6 +58,12 @@ option {
     box-shadow: 0 0 0 0.2rem rgb(62, 62, 62);
 }
 
+#div_id_keywords > div {
+    max-width: none;
+    max-height: 10rem;
+    overflow-y: scroll;
+}
+
 
 /* filter buttons */
 .form-btn {
