@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from .models import Post, Keyword
+from .models import Technique, Keyword
 from .filters import PostFilter
 from django.views.generic.list import ListView
 from django.http import HttpResponseRedirect
@@ -8,7 +8,7 @@ from .forms import CommentForm
 
 
 class VideoList(ListView):
-    queryset = Post.objects.filter(status=1).order_by('-upload_date')
+    queryset = Technique.objects.filter(status=1).order_by('-upload_date')
     template_name = 'index.html'
     context_object_name = 'post_list'
     paginate_by = 9
@@ -26,7 +26,7 @@ class VideoList(ListView):
 
 class VideoPost(View):
     def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
+        queryset = Technique.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True)
         liked = False
@@ -46,7 +46,7 @@ class VideoPost(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
+        queryset = Technique.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True)
         liked = False

@@ -1,5 +1,5 @@
 import django_filters
-from .models import Post, Keyword
+from .models import Technique, Keyword
 from django.db import models
 from django import forms
 from django.forms import TextInput
@@ -27,7 +27,7 @@ class PostFilter(django_filters.FilterSet):
     )
 
     class Meta:
-        model = Post
+        model = Technique
         fields = [
             'title',
             'keywords'

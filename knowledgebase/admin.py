@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Post, Keyword, Comment
+from .models import Technique, Keyword, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
-@admin.register(Post)
+@admin.register(Technique)
 class PostAdmin(SummernoteModelAdmin):
 
     search_fields = ['title', 'keywords__name']
@@ -15,8 +15,8 @@ class PostAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('post', 'approved', 'created_on')
-    list_filter = ('approved', 'post', 'created_on')
+    list_display = ('technique', 'approved', 'created_on')
+    list_filter = ('approved', 'technique', 'created_on')
     search_fields = ['post', 'title', 'body', 'email']
     acions = ['approve_comments']
 

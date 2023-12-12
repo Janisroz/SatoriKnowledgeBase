@@ -13,7 +13,7 @@ class Keyword(models.Model):
         return self.name
 
 
-class Post(models.Model):
+class Technique(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     vid_url = models.URLField(max_length=200)
@@ -35,7 +35,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+    technique = models.ForeignKey(Technique, on_delete=models.CASCADE,
                              related_name='comments')
     name = models.CharField(max_length=300)
     body = models.TextField()
