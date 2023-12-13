@@ -10,6 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 class VideoList(ListView):
+    """ Technique List View"""
     queryset = Technique.objects.filter(status=1).order_by('-upload_date')
     template_name = 'index.html'
     context_object_name = 'post_list'
@@ -27,6 +28,7 @@ class VideoList(ListView):
 
 
 class VideoPost(View):
+    """ View Technique View"""
     def get(self, request, slug, *args, **kwargs):
         queryset = Technique.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -78,6 +80,7 @@ class VideoPost(View):
         )
 
 class LikedPost(View):
+    """ Add and Remove Likes View"""
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 

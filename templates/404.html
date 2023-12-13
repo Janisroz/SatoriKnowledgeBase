@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container text-center">
+    <h1>Error 404- Page not found</h1>
+    <p>Sorry! We were unable to find what you are looking for!</p>
+    <a href="{% url 'index' %}" class="btn form-btn mb-3">Return Home</a>
+</div>
+
+{% endblock %}

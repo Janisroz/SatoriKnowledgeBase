@@ -3,6 +3,7 @@ from django import forms
 
 
 class CommentForm(forms.ModelForm):
+    """ Form to add a comment """
     class Meta:
         model = Comment
         fields = ('body',)
