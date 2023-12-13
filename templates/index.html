@@ -14,19 +14,20 @@
     <div class="row">
         {% for post in post_list %} 
         <div class="col-lg-4 col-12 col-sm-6 mb-3">
-            <div class="card h-100">
-                <div class="card-body">
-                    <div class="image-container">
-                        <img class="card-img-top" src="{{ post.thumbnail }}">
+            <a href="{% url 'video_post' post.slug %}" class="post-link">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="image-container">
+                            <img class="card-img-top" src="{{ post.thumbnail }}">
+                        </div>
+                        
+                            <h4 class="card-title mt-1">{{ post.title }}</h2>
+                        <hr />
+                        <p class="card-text h6"><i class="far fa-heart"></i>
+                            {{ post.total_likes }}</p>
                     </div>
-                    <a href="{% url 'video_post' post.slug %}" class="post-link">
-                        <h4 class="card-title mt-1">{{ post.title }}</h2>
-                    </a>
-                    <hr />
-                    <p class="card-text h6"><i class="far fa-heart"></i>
-                        {{ post.total_likes }}</p>
                 </div>
-            </div>
+            </a>
         </div>
         {% endfor %}
     </div>
