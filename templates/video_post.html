@@ -1,13 +1,17 @@
 {% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
 <div class="masthead">
-  <div class="container">
-    <div class="row g-0">
-      <div class="col-md-6 masthead-text">
-        <h1 class="post-title mt-1">{{ post.title }}</h1>
-      </div>
-      <div class="d-none d-md-block col-md-6 masthead-image"></div>
+    <div class="container">
+        <div class="row g-0">
+            <div class="masthead-text">
+                <h1 class="post-title mt-1 mb-2">{{ post.title }}</h1>
+                <span class="keywords"><strong>Keywords:</strong>
+                    {% for keyword in post.keywords.all %}
+                    {{ keyword.name }}{% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                </span>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <div class="container">
@@ -83,7 +87,7 @@
       <hr />
     </div>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-8 card mb-4 mt-3">
       <h3>Comments:</h3>
       <div class="card-body">
@@ -117,6 +121,42 @@
         {% endif %} {% endif %}
       </div>
     </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-md-12 card mt-3">
+        {% if commented %}
+        <div class="alert alert-success mt-2" role="alert">
+          Your comment is awaiting approval
+        </div>
+        {% else %} {% if user.is_authenticated %}
+
+        <h3>Leave a comment:</h3>
+        <p class="post-as">Posting as: {{ user.username }}</p>
+        <form method="post">
+          {{ comment_form | crispy }} {% csrf_token %}
+          <button type="submit" class="btn form-btn mb-3">Submit</button>
+        </form>
+        {% endif %} {% endif %}
+      </div>
   </div>
-</div>
+  <div class="row">
+    <div class="col-md-12 card mb-4 mt-3">
+        <h3>Comments:</h3>
+        <div class="card-body">
+          {% for comment in comments %}
+          <div class="comments" style="padding: 10px">
+            <p class="font-weight-bold">
+              {{ comment.name }}
+              <span class="text-muted font-weight-normal">
+                {{ comment.created_on }}
+              </span>
+              wrote:
+            </p>
+            {{ comment.body | linebreaks }}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+  </div>
 {% endblock content %}

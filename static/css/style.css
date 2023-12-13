@@ -84,7 +84,7 @@ option {
     border: 1px solid rgba(0, 0, 0);
 }
 
-.card:hover {
+.hov-bord:hover {
     box-shadow: 0 0 0 0.2rem rgb(62, 62, 62);
 }
 
@@ -215,6 +215,18 @@ a i {
 
 .fa-comments {
     color: black;
+}
+
+.keywords {
+    font-size: larger;
+}
+
+.asteriskField {
+    display: none;
+}
+
+.post-as {
+    margin-bottom: 0;
 }
 
 /* Login Page */

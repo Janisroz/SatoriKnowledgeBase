@@ -7,13 +7,21 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body',)
 
+        widgets = {
+            'body': forms.Textarea(attrs={'rows':3, 'placeholder': 'Add a comment'}),
+        }
+
+        labels = {
+            'body': 'Comment below:'
+        }
+
 class TechniqueForm(forms.ModelForm):
     """ Form to create a Technique """
     class Meta:
         model = Technique
         fields = ['title', 'slug', 'vid_url', 'description', 'thumbnail', 'status', 'keywords']
 
-        widget = {
+        widgets = {
             'description': forms.Textarea(attrs={'rows':5}),
         }
 
