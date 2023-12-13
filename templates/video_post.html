@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
+<!-- Heading and Keywords Section -->
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
@@ -13,7 +14,7 @@
         </div>
     </div>
 </div>
-
+<!-- Embedded video Section -->
 <div class="container">
   <div class="row">
     <div class="col card mb-4 mt-2 left top">
@@ -22,7 +23,7 @@
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/YJGiDQZK3qg?si=_LpdTBKm19PG7jS7"
+            src="{{ post.vid_url }}"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -81,48 +82,13 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
+</div>
+<div class="row">
     <div class="col">
-      <hr />
+        <hr />
     </div>
-  </div>
-  <!-- <div class="row">
-    <div class="col-md-8 card mb-4 mt-3">
-      <h3>Comments:</h3>
-      <div class="card-body">
-        {% for comment in comments %}
-        <div class="comments" style="padding: 10px">
-          <p class="font-weight-bold">
-            {{ comment.name }}
-            <span class="text-muted font-weight-normal">
-              {{ comment.created_on }}
-            </span>
-            wrote:
-          </p>
-          {{ comment.body | linebreaks }}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="col-md-4 card mb-4 mt-3">
-        {% if commented %}
-        <div class="alert alert-success mt-2" role="alert">
-          Your comment is awaiting approval
-        </div>
-        {% else %} {% if user.is_authenticated %}
-
-        <h3>Leave a comment:</h3>
-        <p class="post-as">Posting as: {{ user.username }}</p>
-        <form method="post" style="margin-top: 1.3em">
-          {{ comment_form | crispy }} {% csrf_token %}
-          <button type="submit" class="btn form-btn mb-3">Submit</button>
-        </form>
-        {% endif %} {% endif %}
-      </div>
-    </div>
-  </div> -->
-
+</div>
+<!-- Add Comment Section -->
   <div class="row">
     <div class="col-md-12 card mt-3">
         {% if commented %}
@@ -140,6 +106,7 @@
         {% endif %} {% endif %}
       </div>
   </div>
+  <!-- Display Comment Section -->
   <div class="row">
     <div class="col-md-12 card mb-4 mt-3">
         <h3>Comments:</h3>
