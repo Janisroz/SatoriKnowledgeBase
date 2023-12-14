@@ -1,240 +1,256 @@
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: "Kanit", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Kanit", sans-serif;
 }
 
 /* Nav Bar */
 
 .navbar {
-    background-color: #0e0f0f;
+  background-color: #0e0f0f;
 }
 
 .navbar-dark .navbar-brand {
-    color: #f2f2f2;
-    text-shadow: 2px 2px 2px #f2f2f2;
-    font-family: "Exo", sans-serif;
+  color: #f2f2f2;
+  text-shadow: 2px 2px 2px #f2f2f2;
+  font-family: "Exo", sans-serif;
 }
 
-.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link,
 .navbar-toggler-icon {
-    color: #f2f2f2;
+  color: #f2f2f2;
 }
 
 .nav-link:hover {
-    color: darkgray;
-    text-shadow: 2px 2px 2px darkgray;
+  color: darkgray;
+  text-shadow: 2px 2px 2px darkgray;
 }
 
 .active {
-    text-shadow: 3px 3px 3px darkgray;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: neon 1s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+    from {
+      text-shadow:
+      0 0 6px rgba(202,228,225,0.92),
+      0 0 30px rgba(202,228,225,0.34),
+      0 0 12px rgba(30,132,242,0.52),
+      0 0 21px rgba(30,132,242,0.92),
+      0 0 34px rgba(30,132,242,0.78),
+      0 0 54px rgba(30,132,242,0.92);
+    }
+    to {
+      text-shadow:
+      0 0 6px rgba(202,228,225,0.98),
+      0 0 30px rgba(202,228,225,0.42),
+      0 0 12px rgba(30,132,242,0.58),
+      0 0 22px rgba(30,132,242,0.84),
+      0 0 38px rgba(30,132,242,0.88),
+      0 0 60px rgba(30,132,242,1);
+    }
 }
 
 /* Dropdown Button */
 .btn-dropdown {
-    background-color: #0e0f0f;
-    color: #f2f2f2;
+  background-color: #0e0f0f;
+  color: #f2f2f2;
 }
 
 /* form  */
 label {
-    font-family: "Exo",
-        sans-serif;
-    font-weight: 700;
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
 }
 
 option {
-    font-family: "Kanit", sans-serif;
+  font-family: "Kanit", sans-serif;
 }
 
 .form-control {
-    border-color: black;
+  border-color: black;
 }
 
 .form-control:focus {
-    border-color: black;
-    box-shadow: 0 0 0 0.2rem rgb(62, 62, 62);
+  border-color: black;
+  box-shadow: 0 0 0 0.2rem rgb(62, 62, 62);
 }
 
 #div_id_keywords > div {
-    max-width: none;
-    max-height: 10rem;
-    overflow-y: scroll;
+  max-width: none;
+  max-height: 10rem;
+  overflow-y: scroll;
 }
-
 
 /* filter buttons */
 .form-btn {
-    border-color: black;
-    font-family: "Exo",
-        sans-serif;
-    font-weight: 700;
-
+  border-color: black;
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
 }
 
 .form-btn:hover {
-    border-color: darkgray;
-    color: darkgray;
+  border-color: darkgray;
+  color: darkgray;
 }
 
 /* Post Cards */
 .card {
-    border: 1px solid rgba(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0);
 }
 
 .hov-bord:hover {
-    box-shadow: 0 0 0 0.2rem rgb(62, 62, 62);
+  box-shadow: 0 0 0 0.2rem rgb(62, 62, 62);
 }
 
 .card-title {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-    color: black;
-    font-family: "Kanit", sans-serif;
-    font-size: larger;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: black;
+  font-family: "Kanit", sans-serif;
+  font-size: larger;
 }
 
 .card-title:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 hr {
-    background-color: black;
-    height: 1px;
-    width: 100%;
+  background-color: black;
+  height: 1px;
+  width: 100%;
 }
 
 .post-link {
-    max-height: 20%;
-    text-overflow: ellipsis;
+  max-height: 20%;
+  text-overflow: ellipsis;
 }
 
 a:hover {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .image-container {
-    height: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-text {
-    color: black;
+  color: black;
 }
 
 .img-top {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-height: 340px;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 340px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 100%;
 }
 
 .fa-heart {
-    color: black;
+  color: black;
 }
 
 .btn-like {
-    border: none;
-    background-color: transparent;
-    padding: 0;
+  border: none;
+  background-color: transparent;
+  padding: 0;
 }
 
 .post-as {
-    font-size: larger;
+  font-size: larger;
 }
-
 
 /* Pagination Controls */
 .page-link {
-    color: black;
-    font-family: "Exo",
-        sans-serif;
-    font-weight: 700;
-    border-color: black;
-
+  color: black;
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
+  border-color: black;
 }
 
 .page-link:hover {
-    color: darkgray !important;
-    background-color: initial;
+  color: darkgray !important;
+  background-color: initial;
 }
 
 /* Footer */
 .footer {
-    background-color: #0e0f0f;
-    position: sticky;
-    bottom: 0;
-    padding-bottom: 0 !important;
-    max-height: 10vh;
+  background-color: #0e0f0f;
+  position: sticky;
+  bottom: 0;
+  padding-bottom: 0 !important;
+  max-height: 10vh;
 }
 
 .footer-margins {
-    margin-bottom: 0.25em;
+  margin-bottom: 0.25em;
 }
 
 .social-links {
-    font-size: large;
+  font-size: large;
 }
 
 .footer-link {
-    color: rgba(255, 255, 255, 0.491);
+  color: rgba(255, 255, 255, 0.491);
 }
 
 .social-link:hover {
-    color: white;
+  color: white;
 }
 
 .social-links a:hover {
-    color: rgba(255, 255, 255, 0.491);
+  color: rgba(255, 255, 255, 0.491);
 }
 
 a i {
-    width: auto;
+  width: auto;
 }
 
 /* Video Post Pages */
-.card-text+p {
-    font-size: x-large;
+.card-text + p {
+  font-size: x-large;
 }
 
 .fa-comments {
-    color: black;
+  color: black;
 }
 
 .keywords {
-    font-size: larger;
+  font-size: larger;
 }
 
 .asteriskField {
-    display: none;
+  display: none;
 }
 
 .post-as {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* Login Page */
 .sign-up-link {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 .helptext a {
-    color: black;
+  color: black;
 }
