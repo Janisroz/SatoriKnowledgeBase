@@ -117,3 +117,19 @@ class DeleteTechnique(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = ''
     def test_func(self):
         return self.request.user.is_superuser
+
+
+class LikedTechniques(LoginRequiredMixin, View):
+    """" View Users Liked Techniques """
+    template_name = 'knowledgebase/liked_techniques.html'
+    paginate_by = 9
+
+    def get(self, request, *args, **kwargs):
+        # Retrieve the liked techniques for the logged-in user
+        liked_techniques = Technique.objects.filter(likes=request.user)
+
+        context = {
+            'liked_techniques': liked_techniques
+        }
+
+        return render(request, self.template_name, context)
