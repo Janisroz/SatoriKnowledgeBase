@@ -81,8 +81,8 @@ class VideoPost(View):
 
 class LikedPost(View):
     """ Add and Remove Likes View"""
-    def post(self, request, slug):
-        post = get_object_or_404(Post, slug=slug)
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Technique, slug=slug)
 
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
