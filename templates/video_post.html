@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
+{% extends 'base.html' %}
+{% block title %}{{ post.title }}{% endblock%}
+{% block content %} {% load crispy_forms_tags %}
 <!-- Heading and Keywords Section -->
 <div class="masthead">
     <div class="container">
