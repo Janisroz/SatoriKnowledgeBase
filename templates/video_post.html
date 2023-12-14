@@ -34,7 +34,7 @@
         </div>
 
         <p class="card-text">{{ post.description | safe }}</p>
-        <div class="row">
+        <div class="row mb-1">
           <div>
             <strong>
               {% if user.is_authenticated %}
@@ -76,12 +76,14 @@
               {{ total_comments }}
             </strong>
             {% endwith %}
-            {% if user.is_superuser %}
-            <a href="{% url 'edit_technique' post.slug %}" class="btn form-btn mb-3">Edit Technique</a>
-            <a href="{% url 'delete_technique' post.slug %}" class="btn form-btn mb-3">Delete Technique</a>
-            {% endif %}
           </div>
         </div>
+        <div class="row">
+            {% if user.is_superuser %}
+            <a href="{% url 'edit_technique' post.slug %}" class="btn form-btn mr-2 mb-1">Edit Technique</a>
+            <a href="{% url 'delete_technique' post.slug %}" class="btn btn-danger mb-1">Delete Technique</a>
+            {% endif %}
+          </div>
       </div>
     </div>
 </div>
