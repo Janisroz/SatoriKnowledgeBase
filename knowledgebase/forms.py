@@ -1,5 +1,7 @@
 from .models import Comment, Technique
+from .filters import PostFilter
 from django import forms
+
 
 
 class CommentForm(forms.ModelForm):
