@@ -107,7 +107,7 @@ class EditTechnique(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name='knowledgebase/edit_technique.html'
     form_class = TechniqueForm
     model = Technique
-    success_url = ''
+    success_url = '/'
 
     def test_func(self):
         return self.request.user.is_superuser
@@ -115,7 +115,7 @@ class EditTechnique(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class DeleteTechnique(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Delete a Technique """
     model=Technique
-    success_url = ''
+    success_url = '/'
 
     def test_func(self):
         return self.request.user.is_superuser
