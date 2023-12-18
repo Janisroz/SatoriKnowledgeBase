@@ -55,6 +55,12 @@ body {
     }
 }
 
+/* Heading  */
+h1 {
+    font-family: "Exo", sans-serif;
+    font-size: calc(18px + 0.75vw);;
+}
+
 /* Dropdown Button */
 .btn-dropdown {
   background-color: #0e0f0f;
