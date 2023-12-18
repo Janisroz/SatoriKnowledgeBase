@@ -29,5 +29,5 @@ class TechniqueForm(forms.ModelForm):
         }
 
         labels = {
-            'vid_url': 'Video URL'
+            'vid_url': 'Video URL: must be embed src link from Youtube'
         }

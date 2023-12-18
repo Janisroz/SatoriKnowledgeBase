@@ -96,7 +96,7 @@ class CreateTechnique(LoginRequiredMixin, CreateView):
     template_name = 'add_technique.html'
     model = Technique
     form_class = TechniqueForm
-    success_url = ''
+    success_url = '/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
