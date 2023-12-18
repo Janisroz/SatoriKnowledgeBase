@@ -8,6 +8,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Keyword(models.Model):
+    """ Model to create Keyword """
     name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
@@ -15,6 +16,7 @@ class Keyword(models.Model):
 
 
 class Technique(models.Model):
+    """ Model to create Technique """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     vid_url = models.URLField(max_length=200)
@@ -43,6 +45,7 @@ class Technique(models.Model):
 
 
 class Comment(models.Model):
+    """ Model to create Comment """
     technique = models.ForeignKey(Technique, on_delete=models.CASCADE,
                              related_name='comments')
     name = models.CharField(max_length=300)
