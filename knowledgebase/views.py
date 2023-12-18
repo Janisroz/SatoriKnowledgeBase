@@ -100,7 +100,7 @@ class CreateTechnique(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        return super(createTechnique, self).form_valid(form)
+        return super(CreateTechnique, self).form_valid(form)
 
 class EditTechnique(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """Edit a Technique"""
@@ -108,6 +108,7 @@ class EditTechnique(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     form_class = TechniqueForm
     model = Technique
     success_url = ''
+
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -115,6 +116,7 @@ class DeleteTechnique(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Delete a Technique """
     model=Technique
     success_url = ''
+
     def test_func(self):
         return self.request.user.is_superuser
 
