@@ -29,6 +29,7 @@ class Technique(models.Model):
         blank=False,
         null=False,
     )
+    thumbnail_alt_text = models.CharField(max_length=200, blank=True)
     upload_date = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='post_likes', blank=True)

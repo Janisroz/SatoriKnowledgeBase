@@ -22,12 +22,13 @@ class TechniqueForm(forms.ModelForm):
     """ Form to create a Technique """
     class Meta:
         model = Technique
-        fields = ['title', 'slug', 'vid_url', 'description', 'thumbnail', 'status', 'keywords']
+        fields = ['title', 'slug', 'vid_url', 'description', 'thumbnail','thumbnail_alt_text', 'status', 'keywords']
 
         widgets = {
             'description': forms.Textarea(attrs={'rows':5}),
         }
 
         labels = {
-            'vid_url': 'Video URL: must be embed src link from Youtube'
+            'vid_url': 'Video URL: must be embed src link from Youtube',
+            'thumbnail_alt_text': 'Thumbnail alt text'
         }
