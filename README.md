@@ -1,39 +1,40 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Satori Knowledge Base
 
-Welcome,
+Satori Knowledge Base is an application that allows users to watch & study Brazilian Jiu Jitsu (BJJ) techniques. Users are able to register, like and comment on videos.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The application was built using the Django Framework and can be accessed [here](https://satori-knowledgebase-f34b4f67eb41.herokuapp.com/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+# Add multi device mockup image
 
-## Codeanywhere Reminders
+## UX & Design
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+### Strategy
 
-`python3 -m http.server`
+The purpose of this site is to allow users to access and filter a library of Brazilian Jiu Jitsu techniques. Users are able to like, comment and acces a liked videos in a minimalistc layout that focuses on users learning. Admin users are able to create, edit and delete videos all on the user facing site.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+#### Agile Methodology
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+An Agile Project Management approach was adopted from the begining of the project. User stories were created for each individual feature of the site. Each user story was broken down into smaller tasks allowing a clear goal to be illustrated with each user story. User stories were tracked and updated throughout the development cycle with tasks being added and updated and new stories added if they arose. The user stories were tracked using a Github Project Kanban board which you can view here [here](https://github.com/users/Janisroz/projects/2)
 
-`http_server`
+#### User Stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+User stories were broken down into tasks allowing for easy planning of the development, Each user story was  assigned to either the user or site admin.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+### Scope
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### Essential Content
 
-To log into the Heroku toolbelt CLI:
+- Home Page with technique list view
+- Search & Filter functionality on home page
+- Technique Page where video is displayed
+- Comment & Like section on each technique page
+- Option to Add, Edit and Delete Techniques for admin users
+- Sign up, login and logout pages
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### Optional Content
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- Liked videos page
 
----
+### Structure
 
-Happy coding!
+The database structure was developed using the django built-in models. Before development the models were defined and mapped out as a database schema. 
