@@ -22,7 +22,7 @@ class TechniqueForm(forms.ModelForm):
     """ Form to create a Technique """
     class Meta:
         model = Technique
-        fields = ['title', 'slug', 'vid_url', 'description', 'thumbnail','thumbnail_alt_text', 'status', 'keywords']
+        fields = ['title', 'vid_url', 'description', 'thumbnail','thumbnail_alt_text', 'status', 'keywords']
 
         widgets = {
             'description': forms.Textarea(attrs={'rows':5}),

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django_resized import ResizedImageField
+from django.utils.text import slugify
 
 # Create your models here.
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -43,6 +44,13 @@ class Technique(models.Model):
 
     def total_likes(self):
         return self.likes.count()
+
+    def save(self, *args, **kwargs):
+    # Auto-generate slug from the title field
+        if not self.slug:
+            self.slug = slugify(self.title)
+
+        super(Technique, self).save(*args, **kwargs)
 
 
 class Comment(models.Model):
