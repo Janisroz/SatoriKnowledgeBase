@@ -46,7 +46,7 @@ class Technique(models.Model):
         return self.likes.count()
 
     def save(self, *args, **kwargs):
-    # Auto-generate slug from the title field
+        # Auto-generate slug from the title field
         if not self.slug:
             self.slug = slugify(self.title)
 
@@ -56,7 +56,7 @@ class Technique(models.Model):
 class Comment(models.Model):
     """ Model to create Comment """
     technique = models.ForeignKey(Technique, on_delete=models.CASCADE,
-                             related_name='comments')
+                            related_name='comments')
     name = models.CharField(max_length=300)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now=True)

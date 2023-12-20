@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .forms import CommentForm,TechniqueForm
+from .forms import CommentForm, TechniqueForm
 from .models import Technique, Keyword, STATUS, Comment
 from .views import VideoPost
 from django.core.files.uploadedfile import SimpleUploadedFile
@@ -21,21 +21,22 @@ class TestCommentForm(TestCase):
         })
         self.assertFalse(comment_form.is_valid())
 
+
 class TestTechniqueForm(TestCase):
     """ TestTechniqueForm """
     def setUp(self):
         """ Create a Keyword for testing """
         self.keyword = Keyword.objects.create(name='Test Keyword')
-        
+
     def test_technique_form_is_valid(self):
         """ Test Technique form is valid """
         with open('static/favicon/android-chrome-192x192.png', 'rb') as f:
             thumbnail_data = f.read()
-        thumbnail = SimpleUploadedFile('thumbnail.png', thumbnail_data, content_type='image/png')
-        
+        thumbnail = SimpleUploadedFile(
+                'thumbnail.png', thumbnail_data, content_type='image/png')
 
         technique_form = TechniqueForm({
-           'title': 'Test Technique',
+            'title': 'Test Technique',
             'vid_url': 'https://www.example.com/video.mp4',
             'description': 'This is a test technique description.',
             'status': STATUS[1][0],  # Use the second status choice (Published)
@@ -43,7 +44,7 @@ class TestTechniqueForm(TestCase):
         }, files={'thumbnail': thumbnail})
 
         self.assertTrue(technique_form.is_valid(), technique_form.errors)
-    
+
     def test_invalid_technique_form_empty_fields(self):
         """ Test Technique form is invalid """
         # Test the form with empty required fields
@@ -60,7 +61,7 @@ class TestTechniqueForm(TestCase):
         self.assertIn('thumbnail', form.errors)
         self.assertIn('status', form.errors)
         self.assertIn('keywords', form.errors)
-    
+
     def test_invalid_form_partial_empty_fields(self):
         """ Test the form with some required fields empty """
         data = {
@@ -84,7 +85,3 @@ class TestTechniqueForm(TestCase):
         self.assertIn('thumbnail', form.errors)
         self.assertIn('status', form.errors)
         self.assertIn('keywords', form.errors)
-
-    
-
-

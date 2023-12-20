@@ -43,7 +43,7 @@ class VideoPost(View):
             {
                 "post": post,
                 "comments": comments,
-                "commented":False,
+                "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm()
             }
@@ -79,6 +79,7 @@ class VideoPost(View):
             }
         )
 
+
 class LikedPost(View):
     """ Add and Remove Likes View"""
     def post(self, request, slug, *args, **kwargs):
@@ -91,6 +92,7 @@ class LikedPost(View):
 
         return HttpResponseRedirect(reverse('video_post', args=[slug]))
 
+
 class CreateTechnique(LoginRequiredMixin, CreateView):
     """Create Technique View"""
     template_name = 'add_technique.html'
@@ -102,9 +104,10 @@ class CreateTechnique(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super(CreateTechnique, self).form_valid(form)
 
+
 class EditTechnique(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """Edit a Technique"""
-    template_name='knowledgebase/edit_technique.html'
+    template_name ='knowledgebase/edit_technique.html'
     form_class = TechniqueForm
     model = Technique
     success_url = '/'
@@ -112,9 +115,10 @@ class EditTechnique(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user.is_superuser
 
+
 class DeleteTechnique(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Delete a Technique """
-    model=Technique
+    model = Technique
     success_url = '/'
 
     def test_func(self):

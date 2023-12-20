@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,14 +27,13 @@
       src="https://kit.fontawesome.com/658b5ed3fa.js"
       crossorigin="anonymous"
     ></script>
-    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <title>Satori Knowledge Base- {% block title %}{% endblock%}</title>
   </head>
   <body>
-    <main role="main" class="flex-shrink-0">
+    <main class="flex-shrink-0">
       <!-- Nav Bar -->
       <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="{% url 'index' %}"
@@ -115,7 +115,6 @@
             role="button"
             target="_blank"
             class="m-1 footer-link"
-            value="Facebook Link"
             ><i class="fab fa-facebook-square social-link"></i>
           </a>
           <a
@@ -123,7 +122,6 @@
             role="button"
             class="m-1 footer-link"
             target="_blank"
-            value="Instagra Link"
             ><i class="fab fa-instagram-square social-link"></i>
           </a>
           <a
@@ -131,7 +129,6 @@
             role="button"
             class="m-1 footer-link"
             target="_blank"
-            value="Youtube Link"
             ><i class="fab fa-youtube-square social-link"></i>
           </a>
         </p>
