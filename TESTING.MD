@@ -203,3 +203,37 @@ Actual:
 
 A alert is displayed informed that the comment is awaiting approval.
 
+## Navigation Links
+
+Each link on the navbar was tested to ensure that they are rendering the correct pages. Each link was selected to test that the correct pages were loading
+
+- Home = index.html
+- Liked Techniques = liked_techniques.html
+- Logout = Sign out all auth page
+- Register = Sign up all auth page
+- Login = Sign in all auth page
+- Add Technique = add_technique.html
+
+All links were confirmed to be wokking as expected.
+
+## Footer
+
+All links were tested on the footer by clicking on the font awesome icons and that links were opened in new tabs.
+
+All links opened as expected.
+
+
+## Negative Testing
+
+Tests were performed on all forms to ensure:
+
+- All required fields are filled in to correct specification
+
+## Unit Testing
+
+Unit tests were created to test basic functionality of the Comment and Technique forms. These tests can be found in the tests.py file
+
+![succesful tests](docs/README_images/tests.png)
+
+## Accessibility
+
