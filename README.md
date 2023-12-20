@@ -161,6 +161,10 @@ A 403 page was implemented to ensure that if a users tries to gain accesss to re
 
 A favicon was implemented to ensure that the wste was easily recognizable even with multiple tabs open.
 
+### The Skeleton Plane
+
+#### Wireframes
+
 ### Security
 
 Views were secured using the LoginRequiredMixin and the UserPassesTestMixin these were used to ensure that users attempting to access specific pages were authorized. Only admins are able to access the Create, edit and delete technique pages and only logged in users could view their liked techniques.
