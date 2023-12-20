@@ -194,3 +194,12 @@ A logged in user is able to leave a comment on a Technique
 3. Click sign in
 4. Select any technique
 5. Fill in the comment form and submit
+
+Expected:
+
+A alert is displayed informed that the comment is awaiting approval.
+
+Actual:
+
+A alert is displayed informed that the comment is awaiting approval.
+

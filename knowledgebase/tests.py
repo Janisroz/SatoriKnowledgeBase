@@ -82,36 +82,5 @@ class TestTechniqueForm(TestCase):
         self.assertIn('keywords', form.errors)
 
     
-class TestTechniqueView(TestCase):
-    
-    def setUp(self):
-        """ Create a SuperUser for testing """
-        self.user = User.objects.create_superuser(
-            username="myUsername",
-            password="myPassword",
-            email="test@test.com"
-        )
 
-        """ Create a Keyword for testing """
-        self.keyword = Keyword.objects.create(name='Test Keyword')
-
-        """ Create a Technique for testing """
-        self.technique = Technique.objects.create(
-            title= 'Test Technique',
-            slug= 'test-technique',
-            vid_url= 'https://www.example.com/video.mp4',
-            description= 'This is a test technique description.',
-            thumbnail= 'https://www.example.com/thumbnail.jpg',
-            status= STATUS[1][0],  # Use the second status choice (Published)
-        )
-
-        self.technique.keywords.set([self.keyword.id]) # add the keyword ID to the technique
-
-        """ Create a Comment for testing """
-        self.comment = Comment.objects.create(
-            name='myUsername',
-            body='This is a test comment.',
-            technique=self.technique,
-            approved=True
-        )
 
