@@ -237,3 +237,33 @@ Unit tests were created to test basic functionality of the Comment and Technique
 
 ## Accessibility
 
+[Wave Accesibility Tool](https://wave.webaim.org/) was used to ensure that all pages were compliant with wave standards.
+
+Some issues were found with the footer links that they were empty but they all contained value tags so it will be possible to confirm where these links lead.
+
+## Validator Testing
+
+All pages were run through the [w3 HTML Validator](https://validator.w3.org/). All tests were passed with some issues being found with the embedded youtube video. These were not edited as this is the way youtube specifies to use embeds.
+
+All pages were run through the official Pep8 validator to ensure all code was pep8 compliant.
+
+The django auto generated code for AUTH_PASSWORD_VALIDATORS were registering as lines too long. I could not find a way to shorten these lines but since they were auto generated and not my own code, I hope this is acceptable.
+
+## Responsiveness
+
+All pages were tested to ensure responsiveness from screen sizes 320px and up. This was monitored throughout development and the site took a mobile first approach. Responsiveness was tested on mobile devices and also on Chrome an Firefox.
+
+Steps to test:
+
+- Open browser and navigate to [Satori Knowledge base](https://satori-knowledgebase-f34b4f67eb41.herokuapp.com/)
+- Open the developer tools (right click and inspect)
+- Set to responsive and decrease width to 320px
+- Click and drag the responsive window to maximum width
+
+Expected:
+
+Site is responsive on all screen sizes and elements adjust depending on screen size.
+
+Actual:
+
+Site adjusted as expected.
