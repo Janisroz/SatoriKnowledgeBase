@@ -215,8 +215,12 @@ a:hover {
   font-size: large;
 }
 
+.white-text {
+    color: white;
+}
+
 .footer-link {
-  color: rgba(255, 255, 255, 0.491);
+  color: white;
 }
 
 .social-link:hover {
@@ -260,4 +264,9 @@ a i {
 
 .helptext a {
   color: black;
+}
+
+.black-text {
+    color: black;
+    text-decoration: underline;
 }
