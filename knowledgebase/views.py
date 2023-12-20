@@ -62,7 +62,7 @@ class VideoPost(View):
         if comment_form.is_valid():
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment.post = post
+            comment.technique = post
             comment.save()
         else:
             comment_form = CommentForm()
@@ -75,7 +75,7 @@ class VideoPost(View):
                 "comments": comments,
                 "commented": True,
                 "liked": liked,
-                "comment_form": CommentForm()
+                "comment_form": comment_form
             }
         )
 
